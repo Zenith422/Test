@@ -210,28 +210,6 @@
     <!-- Centered Title -->
     <h1 class="title">Payment_5</h1>
 
-<!-- Dropdown on top -->
-<div class="dropdown-container">
-    <select id="dropdown" onchange="openDropdownLink()">
-        <option value="" disabled selected>Select an option</option>
-        <option value="[Payment 1 URL]">[Payment 1]</option>
-        <option value="[Payment 2 URL]">[Payment 2]</option>
-        <option value="[Payment 3 URL]">[Payment 3]</option>
-        <option value="[Payment 4 URL]">[Payment 4]</option>
-    </select>
-</div>
-
-<script>
-function openDropdownLink() {
-    const dropdown = document.getElementById('dropdown');
-    const selectedValue = dropdown.value;
-    if (selectedValue) {
-        window.location.href = selectedValue; // Navigate to the selected link
-    }
-}
-</script>
-
-
     <!-- Download button above the image -->
     <div class="download-button-container">
         <a href="Media/Payment_5.png" download class="download-button">Download Image</a>
@@ -242,16 +220,20 @@ function openDropdownLink() {
         <img src="Media\Payment_5.png" alt="Centered Image">
     </div>
 
-    <!-- Wide button under the image -->
-    <div class="wide-button-container">
-        <a href="upi://pay?pa=wwwA@fde&pn=Fexar&am=666666&cu=INR&tn=Cof21" target="_blank" class="wide-button">Pay with UPI link</a>
+<!-- Buttons below the description -->
+    <div class="buttons-container" style="margin-bottom: 16px;">
+        <a href="tez://pay?pa=wwwA@fde&pn=Fexar&am=666666&cu=INR&tn=Cof21" target="_blank" class="button-link"><button class="button">GPay</button></a>
+        <a href="paytmmp://pay?pa=wwwA@fde&pn=Fexar&am=666666&cu=INR&tn=Cof21" target="_blank" class="button-link"><button class="button">PayTm</button></a>
+        <a href="phonepe://pay?pa=wwwA@fde&pn=Fexar&am=666666&cu=INR&tn=Cof21" target="_blank" class="button-link"><button class="button">PhonePe</button></a>
+        <a href="upi://pay?pa=wwwA@fde&pn=Fexar&am=666666&cu=INR&tn=Cof21" target="_blank" class="button-link"><button class="button">BHIM</button></a>
     </div>
 
-    <!-- Text field with copy button -->
+<!-- Text field with copy button -->
     <div class="text-field-container">
         <input type="text" id="text-field" class="text-field" value="wwwA@fde" readonly>
         <button class="copy-button" onclick="copyToClipboard()">Copy</button>
     </div>
+
 
     <!-- Description text -->
     <h3 class="description">
@@ -260,14 +242,6 @@ function openDropdownLink() {
         Amount: <span id="tn-value">666666 INR</span> <br>
         Note: <span id="tn-value">Cof21</span>
     </h3>
-
-    <!-- Buttons below the description -->
-    <div class="buttons-container">
-        <a href="tez://pay?pa=wwwA@fde&pn=Fexar&am=666666&cu=INR&tn=Cof21" target="_blank" class="button-link"><button class="button">GPay</button></a>
-        <a href="paytmmp://pay?pa=wwwA@fde&pn=Fexar&am=666666&cu=INR&tn=Cof21" target="_blank" class="button-link"><button class="button">PayTm</button></a>
-        <a href="phonepe://pay?pa=wwwA@fde&pn=Fexar&am=666666&cu=INR&tn=Cof21" target="_blank" class="button-link"><button class="button">PhonePe</button></a>
-        <a href="upi://pay?pa=wwwA@fde&pn=Fexar&am=666666&cu=INR&tn=Cof21" target="_blank" class="button-link"><button class="button">BHIM</button></a>
-    </div>
 </div>
 
 <script>
