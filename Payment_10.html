@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment_10</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            margin-top: 20px; /* Add some space from the top */
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px; /* Space below title */
+        }
+
+        .dropdown-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+        .download-button-container {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 10px;
+        }
+
+        .download-button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            background-color: #17a2b8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .download-button:hover {
+            background-color: #138496;
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .wide-button-container {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .wide-button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            background-color: #FF5733;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .wide-button:hover {
+            background-color: #e44e2b;
+        }
+
+        .text-field-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .text-field {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .copy-button {
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .copy-button:hover {
+            background-color: #218838;
+        }
+
+        .description {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        .button-link {
+            flex: 1;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            .dropdown-container, .buttons-container, .text-field-container, .wide-button-container, .download-button-container {
+                max-width: 100%;
+            }
+
+            .button, .copy-button, .wide-button, .download-button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Centered Title -->
+    <h1 class="title">Payment_10</h1>
+
+<!-- Dropdown on top -->
+<div class="dropdown-container">
+    <select id="dropdown" onchange="openDropdownLink()">
+        <option value="" disabled selected>Select an option</option>
+        <option value="[Payment 1 URL]">[Payment 1]</option>
+        <option value="[Payment 2 URL]">[Payment 2]</option>
+        <option value="[Payment 3 URL]">[Payment 3]</option>
+        <option value="[Payment 4 URL]">[Payment 4]</option>
+    </select>
+</div>
+
+<script>
+function openDropdownLink() {
+    const dropdown = document.getElementById('dropdown');
+    const selectedValue = dropdown.value;
+    if (selectedValue) {
+        window.location.href = selectedValue; // Navigate to the selected link
+    }
+}
+</script>
+
+
+    <!-- Download button above the image -->
+    <div class="download-button-container">
+        <a href="Media/Payment_10.png" download class="download-button">Download Image</a>
+    </div>
+
+    <!-- Centered Image -->
+    <div class="image-container">
+        <img src="Media\Payment_10.png" alt="Centered Image">
+    </div>
+
+    <!-- Wide button under the image -->
+    <div class="wide-button-container">
+        <a href="upi://pay?pa=www10@fde&pn=Praxel&am=667&cu=INR&tn=Jup76" target="_blank" class="wide-button">Pay with UPI link</a>
+    </div>
+
+    <!-- Text field with copy button -->
+    <div class="text-field-container">
+        <input type="text" id="text-field" class="text-field" value="www10@fde" readonly>
+        <button class="copy-button" onclick="copyToClipboard()">Copy</button>
+    </div>
+
+    <!-- Description text -->
+    <h3 class="description">
+        Bank ID: <span id="id-value">www10@fde</span> <br>
+        Name: <span id="account-value">Praxel</span> <br>
+        Amount: <span id="tn-value">667 INR</span> <br>
+        Note: <span id="tn-value">Jup76</span>
+    </h3>
+
+    <!-- Buttons below the description -->
+    <div class="buttons-container">
+        <a href="tez://pay?pa=www10@fde&pn=Praxel&am=667&cu=INR&tn=Jup76" target="_blank" class="button-link"><button class="button">GPay</button></a>
+        <a href="paytmmp://pay?pa=www10@fde&pn=Praxel&am=667&cu=INR&tn=Jup76" target="_blank" class="button-link"><button class="button">PayTm</button></a>
+        <a href="phonepe://pay?pa=www10@fde&pn=Praxel&am=667&cu=INR&tn=Jup76" target="_blank" class="button-link"><button class="button">PhonePe</button></a>
+        <a href="upi://pay?pa=www10@fde&pn=Praxel&am=667&cu=INR&tn=Jup76" target="_blank" class="button-link"><button class="button">BHIM</button></a>
+    </div>
+</div>
+
+<script>
+    function copyToClipboard() {
+        const textField = document.getElementById('text-field');
+        textField.select(); // Select the text field content
+        textField.setSelectionRange(0, 99999); // For mobile devices
+    
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(textField.value)
+            .then(() => {
+                alert("Copied to clipboard: " + textField.value);
+            })
+            .catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+    }
+    </script>
+    
+</body>
+</html>
