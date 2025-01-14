@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment_1</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            margin-top: 20px; /* Add some space from the top */
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px; /* Space below title */
+        }
+
+        .download-button-container {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 10px;
+        }
+
+        .download-button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            background-color: #17a2b8;
+            border: none;
+            border-radius: 0; /* Remove border radius for square buttons */
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .download-button:hover {
+            background-color: #138496;
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap to the next row */
+            justify-content: center; /* Center buttons horizontally */
+            gap: 10px; /* Space between buttons */
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        .button-link {
+            text-decoration: none;
+        }
+
+        .button {
+            width: 150px; /* Set width and height for square buttons */
+            height: 150px;
+            padding: 0; /* Remove padding */
+            font-size: 17.5px; /* Increase font size by 25% */
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 0; /* Ensure square shape */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .text-field-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .text-field {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .copy-button {
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .copy-button:hover {
+            background-color: #218838;
+        }
+
+        .description {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            .buttons-container, .text-field-container, .download-button-container {
+                max-width: 100%;
+            }
+
+            .button, .copy-button, .download-button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Centered Title -->
+    <h1 class="title">Payment_1</h1>
+
+    <!-- Buttons below the description -->
+    <div class="buttons-container" style="margin-bottom: 16px;">
+        <a href="tez://pay?pa=boim-506688600242@boi&pn=AMPATHFINDER&am=2500&cu=INR&tn=Usw7e" target="_blank" class="button-link"><button class="button">GPay</button></a>
+        <a href="paytmmp://pay?pa=boim-506688600242@boi&pn=AMPATHFINDER&am=2500&cu=INR&tn=Usw7e" target="_blank" class="button-link"><button class="button">PayTm</button></a>
+        <a href="phonepe://pay?pa=boim-506688600242@boi&pn=AMPATHFINDER&am=2500&cu=INR&tn=Usw7e" target="_blank" class="button-link"><button class="button">PhonePe</button></a>
+        <a href="upi://pay?pa=boim-506688600242@boi&pn=AMPATHFINDER&am=2500&cu=INR&tn=Usw7e" target="_blank" class="button-link"><button class="button">BHIM</button></a>
+    </div>
+
+    <!-- Description text -->
+    <h3 class="description">
+        Amount: <span id="tn-value">2500 INR</span> <br>
+        Note: <span id="tn-value">Usw7e</span>
+    </h3>
+</div>
+
+<script>
+    function copyToClipboard() {
+        const textField = document.getElementById('text-field');
+        textField.select(); // Select the text field content
+        textField.setSelectionRange(0, 99999); // For mobile devices
+    
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(textField.value)
+            .then(() => {
+                alert("Copied to clipboard: " + textField.value);
+            })
+            .catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+    }
+</script>
+
+</body>
+</html>
